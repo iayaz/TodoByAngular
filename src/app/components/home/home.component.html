@@ -1,0 +1,28 @@
+<!-- Navbar -->
+<nav class="navbar bg-info">
+    <div class="container-fluid">
+      <a class="navbar-brand">To Do List</a>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" [(ngModel)] = 'searchBar' name="first" >
+        <button class="btn btn-outline-success bg-success text-black" type="submit" (click) ="searchArray()" >Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <!-- To do Box container -->
+
+  <div class="container-sm bg-light mt-5 shadow" style="width: 800px;">
+    <div class="row mb-4 mt-2">
+        <input class="form-control me-2 col pt-2" type="text" placeholder="Enter your tasks" [(ngModel)] = "innerText">
+        <button class="btn btn-outline-success bg-success text-black btn-sm col-1 pt-2" type="submit" (click)="addDetails()">ADD</button>
+    </div>
+
+    <div class="row mb-2 mx-auto" *ngFor ="let note of notesArr">
+        <div class="card">
+            <div class="card-body" >
+              {{note.text}}
+            </div>
+          </div>
+    </div>
+  </div>
+  
